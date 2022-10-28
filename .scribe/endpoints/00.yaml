@@ -1,0 +1,439 @@
+name: '1. Authentication'
+description: 'APIs to manage authentication'
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/email-check
+    metadata:
+      groupName: '1. Authentication'
+      groupDescription: 'APIs to manage authentication'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Check email availability.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Your email address.'
+        required: true
+        example: fugit
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: fugit
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "success": "Request was successful.",
+               "message": "Email address is valid",
+              "data": null
+          }
+        headers: []
+        description: '200'
+        custom: []
+      -
+        status: 409
+        content: |-
+          {
+            "status": "An error has occurred...",
+            "message": "Email address already registered",
+            "data": null
+          }
+        headers: []
+        description: '409'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+            "status": "An error has occurred...",
+            "message": [
+                "The email field is required."
+            ],
+            "data": null
+          }
+        headers: []
+        description: '401'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      groupName: '1. Authentication'
+      groupDescription: 'APIs to manage authentication'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Register a user and dispatch token.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Your email address.'
+        required: true
+        example: repudiandae
+        type: string
+        custom: []
+      name:
+        name: name
+        description: 'Your name address.'
+        required: true
+        example: iusto
+        type: string
+        custom: []
+      children:
+        name: children
+        description: 'Your children.'
+        required: true
+        example: []
+        type: object
+        custom: []
+    cleanBodyParameters:
+      email: repudiandae
+      name: iusto
+      children: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "success": "Request was successful.",
+               "message": null,
+              "data": {
+                    "user": {
+                        "name": "Harrison Jo",
+                       "token": "7|sjosUbQh2C9VQO4VWyINN58VRlT4fsbN1qoNE3bl"
+                   }
+               }
+          }
+        headers: []
+        description: '200'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+             "error": [
+                 "The email has already been taken."
+             ]
+          }
+        headers: []
+        description: '401'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/email-check
+    metadata:
+      groupName: '1. Authentication'
+      groupDescription: 'APIs to manage authentication'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Check email availability.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Your email address.'
+        required: true
+        example: exercitationem
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: exercitationem
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "success": "Request was successful.",
+               "message": "Email address is valid",
+              "data": null
+          }
+        headers: []
+        description: '200'
+        custom: []
+      -
+        status: 409
+        content: |-
+          {
+            "status": "An error has occurred...",
+            "message": "Email address already registered",
+            "data": null
+          }
+        headers: []
+        description: '409'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+            "status": "An error has occurred...",
+            "message": [
+                "The email field is required."
+            ],
+            "data": null
+          }
+        headers: []
+        description: '401'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/register
+    metadata:
+      groupName: '1. Authentication'
+      groupDescription: 'APIs to manage authentication'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Register a user and dispatch token.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Your email address.'
+        required: true
+        example: maxime
+        type: string
+        custom: []
+      name:
+        name: name
+        description: 'Your name address.'
+        required: true
+        example: magnam
+        type: string
+        custom: []
+      children:
+        name: children
+        description: 'Your children.'
+        required: true
+        example: []
+        type: object
+        custom: []
+    cleanBodyParameters:
+      email: maxime
+      name: magnam
+      children: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "success": "Request was successful.",
+               "message": null,
+              "data": {
+                    "user": {
+                        "name": "Harrison Jo",
+                       "token": "7|sjosUbQh2C9VQO4VWyINN58VRlT4fsbN1qoNE3bl"
+                   }
+               }
+          }
+        headers: []
+        description: '200'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+             "error": [
+                 "The email has already been taken."
+             ]
+          }
+        headers: []
+        description: '401'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      groupName: '1. Authentication'
+      groupDescription: 'APIs to manage authentication'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Authenticate a user and dispatch token.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Your email address.'
+        required: true
+        example: tempora
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'Your password.'
+        required: true
+        example: omnis
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: tempora
+      password: omnis
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "success": "Request was successful.",
+               "message": null,
+              "data": {
+                    "user": {
+                        "name": "Harrison Jo",
+                       "token": "7|sjosUbQh2C9VQO4VWyINN58VRlT4fsbN1qoNE3bl"
+                   }
+               }
+          }
+        headers: []
+        description: '200'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+            "message": "The email field is required.",
+            "errors": {
+                "email": [
+                    "The email field is required."
+                ]
+            }
+          }
+        headers: []
+        description: '401'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+            "status": "An error has occurred...",
+            "message": "Credentials do not match",
+            "data": ""
+          }
+        headers: []
+        description: '401'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/logout
+    metadata:
+      groupName: '1. Authentication'
+      groupDescription: 'APIs to manage authentication'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Logout a user and delete token.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "success": "Request was successful.",
+               "message": "You have succesfully been logged out and your token has been removed",
+              "data": null
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
